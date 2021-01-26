@@ -8,4 +8,4 @@ Du an quan ly nhan vien voi Django Web Framework..
 - Install required packages: `pip install django`
 - Run app: `python manage.py runserver`
 
-`Goodlook`
+`Goodlook` :D
