@@ -1,0 +1,9 @@
+//
+
+thay đổi đồ dài các trường (fiel) trong model.py _> max_length=
+thêm điều kiên require
+...
+//
+
+
+//

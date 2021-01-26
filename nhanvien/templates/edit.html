@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <div class="row">
+        <form method="POST" class="post-form" action="/update/{{nhanvien.id}}">
+                {% csrf_token %}
+            <div class="containerX">
+        <br>
+            <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+            <h3>Cập Nhật Thông Tin Nhân Viên</h3>
+            </div>
+          </div>
+            <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Mã Nhân Viên:</label>
+            <div class="col-sm-4">
+                <input type="text" name="nvid" id="id_nvid" required maxlength="20" value="{{ nhanvien.nvid }}"/>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Tên Nhân Viên:</label>
+            <div class="col-sm-4">
+                <input type="text" name="nvname" id="id_nvname" required maxlength="100" value="{{ nhanvien.nvname }}" />
+            </div>
+          </div>
+            <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email Nhân Vien:</label>
+            <div class="col-sm-4">
+                <input type="email" name="nvemail" id="id_nvemail" required maxlength="254" value="{{ nhanvien.nvemail }}" />
+            </div>
+          </div>
+            <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Liên Hệ Nhân Viên:</label>
+            <div class="col-sm-4">
+                <input type="text" name="nvcontact" id="id_nvcontact" required maxlength="15" value="{{ nhanvien.nvcontact }}" />
+            </div>
+          </div>
+            <div class="form-group row">
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-4">
+            <button type="submit" class="btn btn-success">Cập nhật</button>
+            </div>
+          </div>
+            </div>
+        </form>
+        </div>
+{% endblock %}

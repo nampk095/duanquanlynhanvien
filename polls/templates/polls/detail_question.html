@@ -1,0 +1,27 @@
+{% extends 'polls/base.html' %}
+
+{% block content123 %}
+    {% if  qs %}
+    <h2>Detail page: chọn câu trả lời</h2>
+    <br>
+<h3>{{ qs.question_text }}</h3>
+        <form action="{% url 'polls:vote' qs.id %}" method="POST">
+            {% csrf_token %}
+
+        {% for item in qs.choice_set.all %}
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="choice" value="{{ item.id }}" id="{{ item.id }}">
+
+            <label class="form-check-label" for="{{ item.id }}">
+    {{ item.choice_text }}   (choiceid_{{ item.id }})
+  </label>
+            </div>
+        {% endfor %}
+            <br>
+            <input type="submit" value="Gửi" class="btn btn-primary">
+
+        </form>
+
+    {% endif %}
+
+{% endblock %}

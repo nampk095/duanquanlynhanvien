@@ -1,0 +1,44 @@
+{% extends 'polls/base.html' %}
+
+{% block content123 %}
+<div class="menu container">
+        <ul>
+            <li><a href="../">home this project (static link)</a>
+            <li><a href="{% url 'polls:viewvotelist' %}">home app (static link)</a>
+
+            <li><a href="../admin">admin project (static link)</a></li>
+
+<li><a href="../polls">polls (static link)</a></li>
+
+<li><a href="../quydeptrai">admin (custom static link)</a></li>
+
+
+    </div>
+
+    <h1> Danh  sách câu hỏi</h1>
+    {% if dsquest %}
+
+<ul>
+
+        {% for item in dsquest %}
+<li><a href="{% url 'polls:detail' item.id %}">{{ item.question_text }}</a> (id_{{ item.id }})</li>
+
+        {% endfor %}
+
+</ul>
+{% else %}
+<h3 style="color:red;">Không có dữ liệu trong câu hỏi nào!!! </h3>
+    {% endif %}
+<div class="docs container">
+    text syntax:<br>
+
+</div>
+
+<div class="content infopage container">
+</br>
+       Tài khoản đăng nhập</br>
+       test - test1234
+
+    </div>
+
+{% endblock %}
